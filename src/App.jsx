@@ -35,16 +35,16 @@ useEffect(()=>{
     <div className=' text-black'>
       <div className='h-screen bg-white'>
         <Navbar className="navbar" />
-        <ul className='messages p-4 border-2 border-solid overflow-y-auto '>
+        <ul className='messages px-4 border-2 border-solid overflow-y-auto '>
           {messages.map((message, index) => (
-            <li key={index} className={`w-3/4 p-2 my-2 rounded-full ${message.from == 'Me'? 'bg-sky-300 ml-auto': 'bg-gray-300 mr-auto'}`}>
+            <li key={index} className={`w-3/4 p-2 my-2 rounded-full ${message.from == 'Me'? 'bg-sky-500 ml-auto': 'bg-gray-300 mr-auto'}`}>
               <p>
-                {message.from}: {message.body}
+                <b>{message.from}:</b> {message.body}
               </p>
             </li>
           ))}
         </ul>
-        <form onSubmit={handleSubmit} className='form flex items-center gap-2'>
+        <form onSubmit={handleSubmit} className='form flex items-center justify-center gap-2'>
           <input 
             type="text" 
             onChange={e => setMessage(e.target.value)} 
