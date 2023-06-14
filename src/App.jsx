@@ -34,8 +34,8 @@ useEffect(()=>{
       <div className='bg-white p-10'>
         <h1>Chat React Socket.io</h1>
         <ul className='h-80 border-8 border-solid overflow-y-auto'>
-          {messages.map((message) => (
-            <li key={message.from} className={`p-2 my-2 table rounded-full ${message.from == 'Me'? 'bg-sky-300': 'bg-gray-300'}`}>
+          {messages.map((message, index) => (
+            <li key={index} className={`p-2 my-2 table rounded-full ${message.from == 'Me'? 'bg-sky-300': 'bg-gray-300'}`}>
               <p>
                 {message.from}: {message.body}
               </p>
